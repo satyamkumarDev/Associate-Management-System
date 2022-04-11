@@ -1,6 +1,6 @@
 
 import express from 'express';
-import associateRouter from './associateRouter.js';
+import associateRouter from './src/associateRouter.js';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import  bodyParser from 'body-parser';

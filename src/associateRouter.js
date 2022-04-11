@@ -1,6 +1,5 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
-import Specialization from './associateModel.js';
 
 import cors from 'cors';
 import { execute, executeOne, insert, updateOne } from './dbHelper.js';
