@@ -1,6 +1,7 @@
 
 import express from 'express';
 import associateRouter from './src/associateRouter.js';
+import cabRouter from './src/cab-booking/cabRouteer.js'
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import  bodyParser from 'body-parser';
@@ -20,7 +21,7 @@ app.use(bodyParser.json())
 
 // app.use(express.static('public'));
 
-var conString = "postgres://postgres:1234@localhost:5432/ams";
+var conString = "postgres://postgres:1234@localhost:5432/Cab";
 
 var client = new pg.Client(conString);
 client.connect();
@@ -32,6 +33,8 @@ app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
+
+app.use('/cab', cabRouter);
 
 app.use('/api', associateRouter);
 
